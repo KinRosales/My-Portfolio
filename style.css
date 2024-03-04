@@ -33,10 +33,10 @@ nav{
 }
 .logo img{
     height: 4em;
-    transition: 0.5s;
+    transition: 0.5s ease;
 }
 .logo img:hover {
-    transform: translateY(-10px);
+    transform: translateY(-5px);
 }
 nav ul{
     display: flex;
@@ -65,7 +65,7 @@ nav ul li a::after{
     height: 3px;
     width: 0%;
     background: #34efdf;
-    border-radius: 12px;
+    border-radius: 15px;
     transition: all 0.4s ease;
 }
 nav ul li a:hover::after{
@@ -98,6 +98,18 @@ input[type="checkbox"]{
     margin: auto;
     margin-top: 5em;
     /* display: none; */
+    animation: fadeInBottom 1.5s ease 0s 1 normal forwards;
+}
+@keyframes fadeInBottom {
+	0% {
+		opacity: 0;
+		transform: translateY(50px);
+	}
+
+	100% {
+		opacity: 1;
+		transform: translateY(0);
+	}
 }
 h1, p{
     /* font-family: 'Poppins'; */
@@ -165,6 +177,7 @@ p.normal-text {
     margin: auto;
     margin-top: 5em;
     display: none;
+    animation: fadeInBottom 1.5s ease 0s 1 normal forwards;
 }
 #aboutMe, .project-text, .contact-text{
     /* font-size: 3em; */
@@ -187,6 +200,7 @@ p.normal-text {
     margin: auto;
     margin-top: 5em;
     display: none;
+    animation: fadeInBottom 1.5s ease 0s 1 normal forwards;
 }
 .card-list {
     /* margin-top: 1em; */
@@ -270,14 +284,15 @@ p.normal-text {
     margin: auto;
     margin-top: 5em;
     display: none;
+    animation: fadeInBottom 1.5s ease 0s 1 normal forwards;
 }
 .contactBody{
     /* border: 2px solid blue; */
     margin-top: 1em;
     width: min(38em, 100%);
 }
-.input-box{
-    /* border-color: black; */
+#emailID{
+    font-weight: bold;
 }
 .input-box text, .input-box input{
     /* border: 2px solid blue; */
