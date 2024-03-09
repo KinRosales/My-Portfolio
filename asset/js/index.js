@@ -13,6 +13,9 @@ document.addEventListener('DOMContentLoaded', function () {
     // get the "See more About Me" link
     var seeMoreAboutMe = document.querySelector('.see_more a');
 
+    // get the "Continue to Projects" link
+    var continueToProjects = document.querySelector('.continueToProjects a');
+    
     // add a click event listener to the "About" link
     aboutLink.addEventListener('click', function () {
         // hide containers
@@ -34,13 +37,24 @@ document.addEventListener('DOMContentLoaded', function () {
         aboutContainer.style.display = 'block';
     });
 
-    // add a click event listener to the "About" link
+    // add a click event listener to the "Projects" link
     projectsLink.addEventListener('click', function () {
         // hide containers
         aboutContainer.style.display = 'none';
         homeContainer.style.display = 'none';
         contactContainer.style.display = 'none';
         // show 
+        projectsContainer.style.display = 'block';
+    });
+    
+    // add a click event listener to the "Projects" link
+    continueToProjects.addEventListener('click', function (event) {
+        event.preventDefault(); // prevent the default action of the link
+        // hide containers
+        homeContainer.style.display = 'none';
+        aboutContainer.style.display = 'none';
+        contactContainer.style.display = 'none';
+        // show aboutContainer
         projectsContainer.style.display = 'block';
     });
     
@@ -55,18 +69,42 @@ document.addEventListener('DOMContentLoaded', function () {
     
 });
 
-// -----------BLUR-----------
-
-// JavaScript code to remove blur from elements with class "blur"
-function removeBlur() {
-    const blurElements = document.querySelectorAll('.blur');
-    blurElements.forEach(element => {
-        element.classList.remove('blur');
-    });
+// Function to update hash in URL
+function updateHash(section) {
+    history.replaceState(null, null, `#${section}`);
 }
 
-
-// Call the function to remove blur when the page loads
-window.onload = function() {
-    removeBlur();
+// Function to check hash value and show appropriate section
+window.onload = function () {
+    var hash = window.location.hash;
+    var sections = document.querySelectorAll("section");
+    sections.forEach(function (section) {
+        section.style.display = "none";
+    });
+    if (hash === "#about") {
+        document.getElementById("about").style.display = "block";
+    } else if (hash === "#projects") {
+        document.getElementById("projects").style.display = "block";
+    } else if (hash === "#contact") {
+        document.getElementById("contact").style.display = "block";
+    } else {
+        document.getElementById("home").style.display = "block";
+    }
+    window.scrollTo(0, 0); 
 };
+
+// Function to handle navigation link click
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+
+        var hash = this.getAttribute('href');
+        var targetSection = document.querySelector(hash);
+        var offsetTop = targetSection.offsetTop;
+
+        window.scrollTo({
+            top: offsetTop,
+            behavior: 'smooth'
+        });
+    });
+});
