@@ -12,37 +12,37 @@
     <link href="https://fonts.googleapis.com/css2?family=Inria+Serif:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Inter:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!---------------------------- NAVIGATION ---------------------------->
+    <!-- NAVIGATION -->
     <header>
-        <div class="logo">
-            <a href="index.html"><img src="asset/img/KJR_Logo2.png" alt="this is a logo"></a>
+        <div id="logo">
+            <a href="index.html"><img src="asset/img/KJR_Logo(white).png" alt="this is a logo"></a>
         </div>
         <input type="checkbox" id="click">
         <label for="click" class="menu-btn">
         <i class="fas fa-bars"></i>
         </label>
         <ul class="navlist">
-            
             <li><a href="#about" id="aboutLink" onclick="updateHash('about')">About</a></li>
             <li><a href="#projects" id="projectsLink" onclick="updateHash('projects')">Projects</a></li>
             <li><a href="asset/pdf/My_Resume.pdf" target="_blank">Resume</a></li>
             <li><a href="#contact" id="contactLink" onclick="updateHash('contact')">Contact</a></li>
+            <li><img src="asset/img/LightMode.png" id="lightModeIcon" alt="light mode icon"></li>
         </ul>
     </header>
 
-    <!---------------------------- HOME SECTION ---------------------------->
+    <!-- HOME SECTION -->
     <section class="home" id="home">
         <p class="p1">Hi, my name is</p>
         <h1 class="shadowEffect">Kino Justin Rosales.</h1>
-        <p class="normal-text">I'm a computer engineer student from Center for Industrial Technology and Entrerprise (CITE) Technical Institute,
+        <p class="introduction1">I'm a computer engineer student from Center for Industrial Technology and Entrerprise (CITE) Technical Institute,
             Inc. Currently, I'm learning HTML, CSS, and JavaScript for our web
             development class. 
         </p> <br>
-        <p class="normal-text">My goal is not only to grow academically, but also to actively seek opportunities to apply my skills in 
+        <p class="introduction2">My goal is not only to grow academically, but also to actively seek opportunities to apply my skills in 
             real-world projects. In order to be competitive and innovative, I believe in continuous learning and staying up to date on the 
             latest innovations in my field of expertise.
         </p > <br>
-        <p class="see_more"><a href="#about" onclick="updateHash('about')">See More About Me <span id="sliding-arrow">-></span></a></p>
+        <p class="see_more"><a href="#about" onclick="updateHash('about')">See More About Me <span class="sliding-arrow">-></span></a></p>
         <div class="social_icons">
             <a href="https://www.facebook.com/kinojustin.selasor" target="_blank"><ion-icon name="logo-facebook"></ion-icon></a>
             <a href="https://github.com/KinRosales" target="_blank"><ion-icon name="logo-github"></ion-icon></a>
@@ -53,7 +53,7 @@
         <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
     </section>
 
-    <!---------------------------- ABOUT SECTION ---------------------------->
+    <!-- ABOUT SECTION -->
     <section class="about-me" id="about">
         <h2 id="aboutMe">About Me.</h2>
         <div class="container">
@@ -92,7 +92,7 @@
                 ever-changing world of Computer Engineering. Let's connect and discover the fascinating possibilities!
             </p>
         </div>
-        <p class="continueToProjects"><a href="#projects" onclick="updateHash('projects')">Continue To Projects <span id="sliding-arrow">-></span></a></p>
+        <p class="continueToProjects"><a href="#projects" onclick="updateHash('projects')">Continue To Projects <span class="sliding-arrow">-></span></a></p>
         <div class="social_icons">
             <a href="https://www.facebook.com/kinojustin.selasor" target="_blank"><ion-icon name="logo-facebook"></ion-icon></a>
             <a href="https://github.com/KinRosales" target="_blank"><ion-icon name="logo-github"></ion-icon></a>
@@ -101,7 +101,7 @@
         </div>
     </section>
     
-    <!---------------------------- PROJECT SECTION ---------------------------->
+    <!-- PROJECT SECTION -->
     <section class="projects" id="projects">
         <h2 class="project-text">Projects.</h2>
         <div class="card-list">
@@ -150,7 +150,7 @@
         </div>
     </section>
 
-    <!---------------------------- CONTACT SECTION ---------------------------->
+    <!-- CONTACT SECTION -->
     <section class="contact" id="contact">
         <h2 class="contact-text">Contact.</h2>
         <p class="contactBody">Feel free to reach out to me. You can also contact me directly to my email
