@@ -15,6 +15,20 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // get the "Continue to Projects" link
     var continueToProjects = document.querySelector('.continueToProjects a');
+
+    var lightModeIcon = document.getElementById("lightModeIcon");
+    var logo = document.getElementById("logo").querySelector("img");
+    
+    lightModeIcon.onclick = function(){
+        document.body.classList.toggle("dark-theme");
+        if(document.body.classList.contains("dark-theme")){
+            lightModeIcon.src = "asset/img/DarkMode.png";
+            logo.src = "asset/img/KJR_Logo(black).png";
+        } else {
+            lightModeIcon.src = "asset/img/LightMode.png";
+            logo.src = "asset/img/KJR_Logo(white).png";
+        }
+    }
     
     // add a click event listener to the "About" link
     aboutLink.addEventListener('click', function () {
@@ -28,7 +42,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // add a click event listener to the "See more About Me" link
     seeMoreAboutMe.addEventListener('click', function (event) {
-        event.preventDefault(); // prevent the default action of the link
+         // prevent the default action of the link
+        event.preventDefault();
         // hide containers
         homeContainer.style.display = 'none';
         projectsContainer.style.display = 'none';
@@ -49,7 +64,7 @@ document.addEventListener('DOMContentLoaded', function () {
     
     // add a click event listener to the "Projects" link
     continueToProjects.addEventListener('click', function (event) {
-        event.preventDefault(); // prevent the default action of the link
+        event.preventDefault(); 
         // hide containers
         homeContainer.style.display = 'none';
         aboutContainer.style.display = 'none';
@@ -69,12 +84,12 @@ document.addEventListener('DOMContentLoaded', function () {
     
 });
 
-// Function to update hash in URL
+// function to update hash in URL
 function updateHash(section) {
     history.replaceState(null, null, `#${section}`);
 }
 
-// Function to check hash value and show appropriate section
+// function to check hash value and show appropriate section
 window.onload = function () {
     var hash = window.location.hash;
     var sections = document.querySelectorAll("section");
@@ -93,7 +108,7 @@ window.onload = function () {
     window.scrollTo(0, 0); 
 };
 
-// Function to handle navigation link click
+// function to handle navigation link click
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         e.preventDefault();
