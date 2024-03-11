@@ -119,12 +119,14 @@ h1, p{
     /* font-size: 1.3em; */
     font-size: clamp(16px, 2.5vw, 1.3em);
     animation: fadeInBottom 1.5s ease 100ms 1 normal forwards;
+    opacity: 0;
 }
 .home .shadowEffect{
-    font-size: clamp(60px, 5.5vw, 75px);
+    font-size: clamp(53px, 5.5vw, 75px);
     font-family: 'Rubik';
     text-shadow: 4px 0px 0px var(--blue);
     animation: fadeInBottom 1.4s ease 100ms 1 normal forwards;
+    opacity: 0;
 }
 @keyframes fadeInBottom {
 	0% {
@@ -146,13 +148,16 @@ p.introduction2 {
 }
 p.introduction1{
     animation: fadeInBottom 1.3s ease 200ms 1 normal forwards;
+    opacity: 0;
 }
 p.introduction2{
     animation: fadeInBottom 1.2s ease 300ms 1 normal forwards;
+    opacity: 0;
 }
 .see_more,
-.social_icons{
+.home .social_icons{
     animation: fadeInBottom 1.1s ease 400ms 1 normal forwards;
+    opacity: 0;
 }
 .see_more a{
     font-family: 'Inter';

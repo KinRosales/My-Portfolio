@@ -29,6 +29,33 @@ document.addEventListener('DOMContentLoaded', function () {
             logo.src = "asset/img/KJR_Logo(white).png";
         }
     }
+
+    // check if there is a theme stored in localStorage
+    var storedTheme = localStorage.getItem('theme');
+    if (storedTheme === 'dark') {
+        document.body.classList.add('dark-theme');
+        lightModeIcon.src = "asset/img/DarkMode.png";
+        logo.src = "asset/img/KJR_Logo(black).png";
+    } else {
+        document.body.classList.remove('dark-theme');
+        lightModeIcon.src = "asset/img/LightMode.png";
+        logo.src = "asset/img/KJR_Logo(white).png";
+    }
+    
+    lightModeIcon.onclick = function(){
+        document.body.classList.toggle("dark-theme");
+        if(document.body.classList.contains("dark-theme")){
+            lightModeIcon.src = "asset/img/DarkMode.png";
+            logo.src = "asset/img/KJR_Logo(black).png";
+            // Store the theme in localStorage
+            localStorage.setItem('theme', 'dark');
+        } else {
+            lightModeIcon.src = "asset/img/LightMode.png";
+            logo.src = "asset/img/KJR_Logo(white).png";
+            // Remove the theme from localStorage
+            localStorage.removeItem('theme');
+        }
+    }
     
     // add a click event listener to the "About" link
     aboutLink.addEventListener('click', function () {
