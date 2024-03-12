@@ -5,7 +5,8 @@ document.addEventListener('DOMContentLoaded', function () {
     var projectsContainer = document.querySelector('.projects');
     var contactContainer = document.querySelector('.contact');
 
-    // get the "About" link in the header
+    // get the links in the header
+    var logo = document.getElementById('logo');
     var aboutLink = document.getElementById('aboutLink');
     var projectsLink = document.getElementById('projectsLink');
     var contactLink = document.getElementById('contactLink');
@@ -57,6 +58,16 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     }
     
+    // add a click event listener to the "Home" link
+    logo.addEventListener('click', function () {
+        // hide containers
+        aboutContainer.style.display = 'none';
+        projectsContainer.style.display = 'none';
+        contactContainer.style.display = 'none';
+        // show homeContainer
+        homeContainer.style.display = 'block';
+    });
+
     // add a click event listener to the "About" link
     aboutLink.addEventListener('click', function () {
         // hide containers
@@ -116,9 +127,15 @@ function updateHash(section) {
     history.replaceState(null, null, `#${section}`);
 }
 
+logo.addEventListener('click', function () {
+    window.location.hash = '#home';
+});
+
 // function to check hash value and show appropriate section
 window.onload = function () {
     var hash = window.location.hash;
+    // Remove the '#' from the hash
+    // var hash = window.location.hash.slice(1); 
     var sections = document.querySelectorAll("section");
     sections.forEach(function (section) {
         section.style.display = "none";
