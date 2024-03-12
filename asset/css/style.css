@@ -29,7 +29,7 @@ body{
     background-attachment: fixed;
     background-size: cover;
     font-family: 'Poppins';
-    max-width: 1550px;
+    max-width: 1500px;
     margin: auto;
 }
 /* HEADER */
@@ -81,7 +81,7 @@ header ul li a:hover::after{
 }
 header .menu-btn i{
     position: fixed;
-    top: 0.7em;
+    top: 0.6em;
     right: 16px;
     z-index: 3;
     color: var(--main-font-color);
@@ -117,12 +117,12 @@ h1, p{
     font-family: 'Inter';
     font-weight: 700;
     /* font-size: 1.3em; */
-    font-size: clamp(16px, 2.5vw, 1.3em);
+    font-size: clamp(20px, 2vw, 1.5em);
     animation: fadeInBottom 1.5s ease 100ms 1 normal forwards;
     opacity: 0;
 }
 .home .shadowEffect{
-    font-size: clamp(53px, 5.5vw, 75px);
+    font-size: clamp(54px, 5.5vw, 75px);
     font-family: 'Rubik';
     text-shadow: 4px 0px 0px var(--blue);
     animation: fadeInBottom 1.4s ease 100ms 1 normal forwards;
@@ -142,7 +142,7 @@ h1, p{
 p.introduction1,
 p.introduction2 {
     /* font-size: clamp(0.9em, 2.5vw, 1em); */
-    font-size: 16px;
+    font-size: clamp(13px, 2vw, 16px);
     width: min(45em, 100%);
     /* border: 2px solid white; */
 }
@@ -162,12 +162,13 @@ p.introduction2{
 .see_more a{
     font-family: 'Inter';
     color: var(--main-font-color);
+    font-size: clamp(13px, 2vw, 16px);
 }
 .sliding-arrow{
     position: relative;
     z-index: -1;
     top: 2px;
-    font-size: 25px;
+    font-size: clamp(19px, 2vw, 25px);
     animation-name: arrow;
     animation-duration: 1.4s;
     animation-iteration-count: infinite;
@@ -208,7 +209,7 @@ p.introduction2{
     position: absolute;
     width: 1em;
     height: 1em;
-    left: 0em;
+    left: 0;
     background: var(--secondary-color);
     border: 2px solid var(--main-font-color);
     border-radius: 100px;
@@ -233,6 +234,7 @@ p.introduction2{
     width: min(55em, 100%);
     padding: 1em 0 0 1.7em;
     font-family: 'Poppins';
+    font-size: clamp(13px, 2vw, 16px);
     /* text-indent: 20px; */
 }
 .continueToProjects{
@@ -241,6 +243,7 @@ p.introduction2{
 .continueToProjects a{
     font-family: 'Inter';
     color: var(--main-font-color);
+    font-size: clamp(13px, 2vw, 16px);
 }
 
 
@@ -342,6 +345,7 @@ p.introduction2{
     /* border: 2px solid blue; */
     margin-top: 1em;
     width: min(38em, 100%);
+    font-size: clamp(14px, 2vw, 16px);
 }
 #emailID{
     font-weight: bold;
@@ -452,11 +456,12 @@ form .field textarea:valid ~ label{
     header #logo img{
         position: relative; 
         z-index: 2;
+        height: 3.5em;
     }
     header ul{
         position: fixed;
         z-index: 1;
-        padding-top: 7.2em;
+        padding-top: 6.2em;
         top: 0px;
         /* left: -100%; */
         right: -100%;
@@ -491,6 +496,10 @@ form .field textarea:valid ~ label{
         background: none;
         color: cyan;
     }
+    .container .circle{
+        margin-top: 0.8em;
+    }
+
     /* PROJECT SECTION */
     .card-list {
         display: grid;
@@ -504,6 +513,6 @@ form .field textarea:valid ~ label{
 
 @media (max-width: 484px){
     .container .vertical-line{
-        height: 98.5%;
+        /* height: 98.5%;  */
     }
 }
