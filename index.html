@@ -14,7 +14,7 @@
 </head>
 <body>
     <!-- NAVIGATION -->
-    <header>
+    <header id="mainHeader">
         <div id="logo">
             <a href="#home"><img src="asset/img/KJR_Logo(white).png" alt="this is a logo"></a>
         </div>
@@ -33,9 +33,12 @@
 
     <!-- HOME SECTION -->
     <section class="home" id="home">
-        <p class="p1">Hi, my name is</p>
-        <h1 class="shadowEffect">Kino Justin Rosales.</h1>
-        <p class="introduction1">I'm a computer engineer student from Center for Industrial Technology and Entrerprise (CITE) Technical Institute,
+        <h4 class="p1">Hi, my name is</h4>
+        <!-- <h1 class="shadowEffect">Kino Justin Rosales.</h1> -->
+        <div class="glitch-wrapper">
+            <div class="glitch" data-glitch="Kino Justin Rosales.">Kino Justin Rosales.</div>
+         </div>
+        <p class="introduction1">I'm a computer engineering student from Center for Industrial Technology and Entrerprise (CITE) Technical Institute,
             Inc. Currently, I'm learning HTML, CSS, and JavaScript for our web
             development class. 
         </p> <br>
@@ -106,7 +109,7 @@
     <section class="projects" id="projects">
         <h2 class="project-text">Projects.</h2>
         <div class="card-list">
-            <a href="https://drive.google.com/file/d/1CHtcr9YtBmNwMsn4y9Gca2lgvLNzrXUQ/view?usp=drive_link" target="_blank" class="card-item">
+            <a href="#popup" onclick="toggle(event)" class="card-item">
                 <img src="asset/img/HomeworkTracker.png" alt="Card Image">
                 <span class="java">Java</span>
                 <h3>Student Homework Tracker</h3>
@@ -114,7 +117,7 @@
                     <i class="fas fa-arrow-right card-icon"></i>
                 </div>
             </a>
-            <a href="https://drive.google.com/file/d/1N6-CU4ZBtmwlVO0HI7TN95l-9w-sB5QN/view?usp=drive_link" target="_blank" class="card-item">
+            <a href="#popup" onclick="toggle(event)" class="card-item">
                 <img src="asset/img/PasswordGenerator.png" alt="Card Image">
                 <span class="java">Java</span>
                 <h3>Password Generator</h3>
@@ -122,7 +125,7 @@
                     <i class="fas fa-arrow-right card-icon"></i>
                 </div>
             </a>
-            <a href="https://drive.google.com/file/d/1wUHt8j8HlkSAFaj7zgZrud7AgHuIS0ka/view?usp=drive_link" target="_blank" class="card-item">
+            <a href="#popup" onclick="toggle(event)" class="card-item">
                 <img src="asset/img/Login_System(Java).png" alt="Card Image">
                 <span class="java">Java</span>
                 <h3>Login System</h3>
@@ -138,7 +141,7 @@
                     <i class="fas fa-arrow-right card-icon"></i>
                 </div>
             </a>
-            <a href="https://drive.google.com/file/d/1ipSHABUCaiQhirqTFoW2eCOpUGonfjK6/view?usp=drive_link" target="_blank" class="card-item">
+            <a href="#popup" onclick="toggle(event)" class="card-item">
                 <img src="asset/img/Simple_Calculator.png" alt="Card Image">
                 <span class="html">HTML</span>
                 <span class="cascading">CSS</span>
@@ -150,6 +153,10 @@
             </a>
         </div>
     </section>
+    <div id="popup">
+        <span onclick="toggle()">&times;</span>
+        <video src="#" controls></video>
+    </div>
 
     <!-- CONTACT SECTION -->
     <section class="contact" id="contact">
@@ -158,24 +165,24 @@
             <span id="emailID">skinojustin@gmail.com</span>
         </p>
         
-        <form action="index.php" method="POST">
+        <form name="submit-to-google-sheet">
             <div class="field">
-                <input type="text" id="name" required>
+                <input type="text" name="Name" id="name" autocomplete="off" required>
                <label>Name</label>
             </div>
             <div class="field">
-                <input type="text" id="email" required>
+                <input type="text" name="Email" id="email" autocomplete="off" required>
                <label>Email</label>
             </div>
             <div class="field">
-               <textarea id="message" required></textarea>
+               <textarea id="message" name="Message" required></textarea>
                <label>Message</label>
             </div>
             <div class="submitBtn">
                 <button type="submit" class="submitMessage">Send Message</button>
             </div>
         </form>
-
+        <span id="msg"></span>
         <div class="social_icons">
             <a href="https://www.facebook.com/kinojustin.selasor" target="_blank"><ion-icon name="logo-facebook"></ion-icon></a>
             <a href="https://github.com/KinRosales" target="_blank"><ion-icon name="logo-github"></ion-icon></a>
@@ -184,5 +191,23 @@
         </div>
     </section>
     <script src="asset/js/index.js"></script>
+    <script>
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbzyCoVoTFs6p9cgmGH0tzVaKbwrXELRanhkRjOleIqjCIhy4-zAQ18TV8EUlL526rTpSA/exec'
+        const form = document.forms['submit-to-google-sheet']
+        const msg = document.getElementById("msg")
+      
+        form.addEventListener('submit', e => {
+          e.preventDefault()
+          fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+            .then(response => {
+                msg.innerHTML = "Message sent successfully"
+                setTimeout(() => {
+                    msg.innerHTML = ""
+                }, 5000);
+                form.reset()
+            })
+            .catch(error => console.error('Error!', error.message))
+        })
+      </script>
 </body>
 </html> 
