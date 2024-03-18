@@ -167,3 +167,48 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         });
     });
 });
+
+function toggle(event){
+    // var blurContainers = document.querySelectorAll('projects');
+    // blurContainers.forEach(container => {
+    //     container.classList.toggle('active');
+    // });
+
+    var projects = document.getElementById('projects');
+    projects.classList.toggle('active')
+
+    var popup = document.getElementById('popup');
+    popup.classList.toggle('active')
+
+    // check if event is defined and if not, return
+    if (!event) return;
+
+    var clickedCard = event.target.closest('.card-item');
+
+    if (clickedCard.querySelector('h3').textContent === "Student Homework Tracker") {
+        var video = document.querySelector('#popup video');
+        video.src = "asset/vid/HomeworkTracker.mp4";
+    } else if (clickedCard.querySelector('h3').textContent === "Password Generator") {
+        var video = document.querySelector('#popup video');
+        video.src = "asset/vid/PasswordGenerator.mp4";
+    } else if (clickedCard.querySelector('h3').textContent === "Login System") {
+        var video = document.querySelector('#popup video');
+        video.src = "asset/vid/LoginSystem(java).mp4";
+    } else if (clickedCard.querySelector('h3').textContent === "Simple Calculator") {
+        var video = document.querySelector('#popup video');
+        video.src = "asset/vid/Simple-Calculator.mp4";
+    }
+
+    // disable header when popup is active
+    var header = document.getElementById('mainHeader');
+    header.classList.toggle('disabled');
+
+    // listen for transition end event on popup
+    popup.addEventListener('transitionend', function() {
+        if (!popup.classList.contains('active')) {
+            header.classList.remove('disabled');
+        }
+    });
+    // var popupSpan = document.querySelector('#popup span');
+    // popupSpan.classList.toggle('active');
+}
