@@ -14,7 +14,7 @@
 </head>
 <body>
     <!-- NAVIGATION -->
-    <header id="mainHeader">
+    <header id="header">
         <div id="logo">
             <a href="#home"><img src="asset/img/KJR_Logo(white).png" alt="this is a logo"></a>
         </div>
@@ -109,7 +109,7 @@
     <section class="projects" id="projects">
         <h2 class="project-text">Projects.</h2>
         <div class="card-list">
-            <a href="#popup" onclick="toggle(event)" class="card-item">
+            <a href="#homeworkTracker" onclick="toggle(event)" class="card-item" id="homeworkTracker">
                 <img src="asset/img/HomeworkTracker.png" alt="Card Image">
                 <span class="java">Java</span>
                 <h3>Student Homework Tracker</h3>
@@ -117,7 +117,7 @@
                     <i class="fas fa-arrow-right card-icon"></i>
                 </div>
             </a>
-            <a href="#popup" onclick="toggle(event)" class="card-item">
+            <a href="#passwordGenerator" onclick="toggle(event)" class="card-item" id="passwordGenerator">
                 <img src="asset/img/PasswordGenerator.png" alt="Card Image">
                 <span class="java">Java</span>
                 <h3>Password Generator</h3>
@@ -125,7 +125,7 @@
                     <i class="fas fa-arrow-right card-icon"></i>
                 </div>
             </a>
-            <a href="#popup" onclick="toggle(event)" class="card-item">
+            <a href="#loginSystem" onclick="toggle(event)" class="card-item" id="loginSystem">
                 <img src="asset/img/Login_System(Java).png" alt="Card Image">
                 <span class="java">Java</span>
                 <h3>Login System</h3>
@@ -141,7 +141,7 @@
                     <i class="fas fa-arrow-right card-icon"></i>
                 </div>
             </a>
-            <a href="#popup" onclick="toggle(event)" class="card-item">
+            <a href="#simpleCalculator" onclick="toggle(event)" class="card-item" id="simpleCalculator">
                 <img src="asset/img/Simple_Calculator.png" alt="Card Image">
                 <span class="html">HTML</span>
                 <span class="cascading">CSS</span>
@@ -151,6 +151,13 @@
                     <i class="fas fa-arrow-right card-icon"></i>
                 </div>
             </a>
+        </div>
+        <p class="continueToContact"><a href="#contact" onclick="updateHash('contact')">Continue To Contacts <span class="sliding-arrow">-></span></a></p>
+        <div class="social_icons">
+            <a href="https://www.facebook.com/kinojustin.selasor" target="_blank"><ion-icon name="logo-facebook"></ion-icon></a>
+            <a href="https://github.com/KinRosales" target="_blank"><ion-icon name="logo-github"></ion-icon></a>
+            <a href="https://www.instagram.com/ro_kinju/" target="_blank"><ion-icon name="logo-instagram"></ion-icon></a>
+            <a href="https://www.linkedin.com/in/kino-rosales-91b7a32b6/" target="_blank"><ion-icon name="logo-linkedin"></ion-icon></a>
         </div>
     </section>
     <div id="popup">

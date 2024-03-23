@@ -1,47 +1,58 @@
 document.addEventListener('DOMContentLoaded', function () {
     // get references to the containers
-    var homeContainer = document.querySelector('.home');
-    var aboutContainer = document.querySelector('.about-me');
-    var projectsContainer = document.querySelector('.projects');
-    var contactContainer = document.querySelector('.contact');
+    const containers = {
+        home: document.querySelector('.home'),
+        about: document.querySelector('.about-me'),
+        projects: document.querySelector('.projects'),
+        contact: document.querySelector('.contact')
+    };
 
-    // get the links in the header
-    var logo = document.getElementById('logo');
-    var aboutLink = document.getElementById('aboutLink');
-    var projectsLink = document.getElementById('projectsLink');
-    var contactLink = document.getElementById('contactLink');
+     // get the links in the header
+    const links = {
+        logo: document.getElementById('logo').querySelector('a'),
+        aboutLink: document.getElementById('aboutLink'),
+        projectsLink: document.getElementById('projectsLink'),
+        contactLink: document.getElementById('contactLink'),
+        seeMoreAboutMe: document.querySelector('.see_more a'),
+        continueToProjects: document.querySelector('.continueToProjects a'),
+        continueToContact: document.querySelector('.continueToContact a')
+    };
 
-    // get the "See more About Me" link
-    var seeMoreAboutMe = document.querySelector('.see_more a');
+    // add event listeners to navigation links to show corresponding containers
+    links.logo.addEventListener('click', () => showContainer(containers.home)); // show Home section
+    links.aboutLink.addEventListener('click', () => showContainer(containers.about)); //show About section
+    links.seeMoreAboutMe.addEventListener('click', (event) => {
+        event.preventDefault(); // prevent the default behavior of the link
+        showContainer(containers.about); // show expanded About section
+    });
+    links.projectsLink.addEventListener('click', () => showContainer(containers.projects));
+    links.continueToProjects.addEventListener('click', (event) => {
+        event.preventDefault(); // prevent the default behavior of the link
+        showContainer(containers.projects); // show Projects section
+    });
+    links.contactLink.addEventListener('click', () => showContainer(containers.contact));
+    links.continueToContact.addEventListener('click', (event) => {
+        event.preventDefault(); // prevent the default behavior of the link
+        showContainer(containers.contact); // show Projects section
+    });
 
-    // get the "Continue to Projects" link
-    var continueToProjects = document.querySelector('.continueToProjects a');
+    // function to display a specific container and hide others
+    function showContainer(container) {
+        // hide all containers except the specified one
+        Object.values(containers).forEach(c => c.style.display = 'none');
+        container.style.display = 'block';
+    }
+    // add click event listeners to navigation items and logo
+    const navItems = document.querySelectorAll('.navlist li a, #logo a');
+    navItems.forEach(item => {
+        item.addEventListener('click', () => {
+            // uncheck the checkbox when a navigation item or logo is clicked
+            document.getElementById('click').checked = false; 
+        });
+    });
 
     var lightModeIcon = document.getElementById("lightModeIcon");
     var logo = document.getElementById("logo").querySelector("img");
-    
-    lightModeIcon.onclick = function(){
-        document.body.classList.toggle("dark-theme");
-        if(document.body.classList.contains("dark-theme")){
-            lightModeIcon.src = "asset/img/DarkMode.png";
-            logo.src = "asset/img/KJR_Logo(black).png";
-        } else {
-            lightModeIcon.src = "asset/img/LightMode.png";
-            logo.src = "asset/img/KJR_Logo(white).png";
-        }
-    }
-
-    // check if there is a theme stored in localStorage
-    var storedTheme = localStorage.getItem('theme');
-    if (storedTheme === 'dark') {
-        document.body.classList.add('dark-theme');
-        lightModeIcon.src = "asset/img/DarkMode.png";
-        logo.src = "asset/img/KJR_Logo(black).png";
-    } else {
-        document.body.classList.remove('dark-theme');
-        lightModeIcon.src = "asset/img/LightMode.png";
-        logo.src = "asset/img/KJR_Logo(white).png";
-    }
     
     lightModeIcon.onclick = function(){
         document.body.classList.toggle("dark-theme");
@@ -57,69 +68,18 @@ document.addEventListener('DOMContentLoaded', function () {
             localStorage.removeItem('theme');
         }
     }
-    
-    // add a click event listener to the "Home" link
-    logo.addEventListener('click', function () {
-        // hide containers
-        aboutContainer.style.display = 'none';
-        projectsContainer.style.display = 'none';
-        contactContainer.style.display = 'none';
-        // show homeContainer
-        homeContainer.style.display = 'block';
-    });
 
-    // add a click event listener to the "About" link
-    aboutLink.addEventListener('click', function () {
-        // hide containers
-        homeContainer.style.display = 'none';
-        projectsContainer.style.display = 'none';
-        contactContainer.style.display = 'none';
-        // show aboutContainer
-        aboutContainer.style.display = 'block';
-    });
-
-    // add a click event listener to the "See more About Me" link
-    seeMoreAboutMe.addEventListener('click', function (event) {
-         // prevent the default action of the link
-        event.preventDefault();
-        // hide containers
-        homeContainer.style.display = 'none';
-        projectsContainer.style.display = 'none';
-        contactContainer.style.display = 'none';
-        // show aboutContainer
-        aboutContainer.style.display = 'block';
-    });
-
-    // add a click event listener to the "Projects" link
-    projectsLink.addEventListener('click', function () {
-        // hide containers
-        aboutContainer.style.display = 'none';
-        homeContainer.style.display = 'none';
-        contactContainer.style.display = 'none';
-        // show 
-        projectsContainer.style.display = 'block';
-    });
-    
-    // add a click event listener to the "Projects" link
-    continueToProjects.addEventListener('click', function (event) {
-        event.preventDefault(); 
-        // hide containers
-        homeContainer.style.display = 'none';
-        aboutContainer.style.display = 'none';
-        contactContainer.style.display = 'none';
-        // show aboutContainer
-        projectsContainer.style.display = 'block';
-    });
-    
-    contactLink.addEventListener('click', function () {
-        // hide containers
-        homeContainer.style.display = 'none';
-        aboutContainer.style.display = 'none';
-        projectsContainer.style.display = 'none';
-        // show container
-        contactContainer.style.display = 'block';
-    });
-    
+    // check if there is a theme stored in localStorage
+    var storedTheme = localStorage.getItem('theme');
+    if (storedTheme === 'dark') {
+        document.body.classList.add('dark-theme');
+        lightModeIcon.src = "asset/img/DarkMode.png";
+        logo.src = "asset/img/KJR_Logo(black).png";
+    } else {
+        document.body.classList.remove('dark-theme');
+        lightModeIcon.src = "asset/img/LightMode.png";
+        logo.src = "asset/img/KJR_Logo(white).png";
+    }
 });
 
 // function to update hash in URL
@@ -168,47 +128,62 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-function toggle(event){
-    // var blurContainers = document.querySelectorAll('projects');
-    // blurContainers.forEach(container => {
-    //     container.classList.toggle('active');
-    // });
-
+// function to toggle video popup
+function toggle(event) {
     var projects = document.getElementById('projects');
-    projects.classList.toggle('active')
+    projects.classList.toggle('active');
 
     var popup = document.getElementById('popup');
-    popup.classList.toggle('active')
+    popup.classList.toggle('active');
 
     // check if event is defined and if not, return
     if (!event) return;
 
     var clickedCard = event.target.closest('.card-item');
+    var videoSrc;
 
-    if (clickedCard.querySelector('h3').textContent === "Student Homework Tracker") {
-        var video = document.querySelector('#popup video');
-        video.src = "asset/vid/HomeworkTracker.mp4";
-    } else if (clickedCard.querySelector('h3').textContent === "Password Generator") {
-        var video = document.querySelector('#popup video');
-        video.src = "asset/vid/PasswordGenerator.mp4";
-    } else if (clickedCard.querySelector('h3').textContent === "Login System") {
-        var video = document.querySelector('#popup video');
-        video.src = "asset/vid/LoginSystem(java).mp4";
-    } else if (clickedCard.querySelector('h3').textContent === "Simple Calculator") {
-        var video = document.querySelector('#popup video');
-        video.src = "asset/vid/Simple-Calculator.mp4";
+    if (clickedCard) {
+        var title = clickedCard.querySelector('h3').textContent;
+
+        // define video source based on the clicked card title
+        switch (title) {
+            case "Student Homework Tracker":
+                videoSrc = "asset/vid/HomeworkTracker.mp4";
+                break;
+            case "Password Generator":
+                videoSrc = "asset/vid/PasswordGenerator.mp4";
+                break;
+            case "Login System":
+                videoSrc = "asset/vid/LoginSystem(java).mp4";
+                break;
+            case "Simple Calculator":
+                videoSrc = "asset/vid/Simple-Calculator.mp4";
+                break;
+            default:
+                break;
+        }
+
+        // set video source if it's defined
+        if (videoSrc) {
+            var video = document.querySelector('#popup video');
+            video.src = videoSrc;
+        }
     }
 
+    // get the header element
+    var header = document.getElementById('header');
+
     // disable header when popup is active
-    var header = document.getElementById('mainHeader');
-    header.classList.toggle('disabled');
+    if (popup.classList.contains('active')) {
+        header.classList.add('disabled');
+    } else {
+        header.classList.remove('disabled');
+    }
 
     // listen for transition end event on popup
-    popup.addEventListener('transitionend', function() {
+    popup.addEventListener('transitionend', function () {
         if (!popup.classList.contains('active')) {
             header.classList.remove('disabled');
         }
     });
-    // var popupSpan = document.querySelector('#popup span');
-    // popupSpan.classList.toggle('active');
 }
