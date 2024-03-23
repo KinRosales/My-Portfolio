@@ -684,7 +684,7 @@ form .field textarea:valid ~ label{
         padding-top: 20px;
     }
     header:hover::after{
-        /* display: none; */
+        display: none;
     }
     .container .circle{
         margin-top: 0.8em;
