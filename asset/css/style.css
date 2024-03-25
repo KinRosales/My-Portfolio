@@ -354,7 +354,7 @@ p.introduction2{
 .social_icons a{
     color: var(--main-font-color);
     font-size: 1.5em;
-    padding-right: 15px;
+    margin-right: 15px;
     display: inline-block;
     transition: 0.5s;
 }
@@ -539,6 +539,7 @@ p.introduction2{
 }
 #popup video{
     max-height: 500px;
+    padding: 0 1em;
 }
 .disabled {
     pointer-events: none;
@@ -583,7 +584,7 @@ form .field textarea{
     outline: none;
     font-size: 17px;
     padding-left: 20px;
-    /* border: 1px solid var(--secondary-color); */
+    border: 2px solid var(--main-font-color);
     border-radius: 15px;
     transition: all 0.3s ease;
 }
@@ -616,34 +617,43 @@ form .field textarea:valid ~ label{
     top: 0%;
     font-size: 16px;
     color: var(--main-font-color);
-    background: var(--secondary-color);
     transform: translateY(-50%);
 }
+form .field input:focus ~ label::before,
+form .field input:valid ~ label::before,
+form .field textarea:focus ~ label::before,
+form .field textarea:valid ~ label::before{
+    content: '';
+    position: absolute;
+    top: 54%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 5px;
+    width: 100%;
+    background-color: var(--secondary-color);
+    z-index: -1;
+}
+
 .contact form .submitBtn button {
     color: var(--secondary-color);
     background: var(--main-font-color);
     margin-top: 9.5em;
-    width: 10rem;
+    margin-left: 5px;
+    width: 9rem;
     height: 3rem;
     border-radius: 10px;
     margin-bottom: 0.6em;
 }
+.contact form .submitBtn button:hover{
+    scale: 1.1;
+    transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1);
+}
+.contact form .submitBtn button:active{
+    scale: 1;
+}
 .contact #msg{
     color: var(--main-font-color);
 }
-
-@keyframes  fadeInRight{
-	0% {
-		opacity: 0;
-		transform: translateX(50px);
-	}
-
-	100% {
-		opacity: 1;
-		transform: translateX(0);
-	}
-}
-
 
 /* FOR LAPTOP 1032px*/
 @media (max-width: 1032px){
