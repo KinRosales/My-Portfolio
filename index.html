@@ -3,200 +3,60 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Portfolio</title>
-    
+    <title>Home</title>
     <link rel="icon" type="image/jpg" href="asset/img/KJR_Logo(white).png">
     <link rel="stylesheet" href="asset/css/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inria+Serif:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Inter:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+    <!-- <link href="https://fonts.googleapis.com/css2?family=Inria+Serif:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Inter:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet"> -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
 </head>
 <body>
-    <!-- NAVIGATION -->
-    <header id="header">
+    <!-- --------------- HEADER --------------- -->
+  <header>
         <div id="logo">
-            <a href="#home"><img src="asset/img/KJR_Logo(white).png" alt="this is a logo"></a>
+            <a href="./index.html"><img src="asset/img/KJR_Logo(white).png" alt="this is a logo"></a>
         </div>
-        <input type="checkbox" id="click">
-        <label for="click" class="menu-btn">
-        <i class="fas fa-bars"></i>
-        </label>
-        <ul class="navlist">
-            <li><a href="#about" id="aboutLink" onclick="updateHash('about')">About</a></li>
-            <li><a href="#projects" id="projectsLink" onclick="updateHash('projects')">Projects</a></li>
-            <li><a href="asset/pdf/My_Resume.pdf" target="_blank">Resume</a></li>
-            <li><a href="#contact" id="contactLink" onclick="updateHash('contact')">Contact</a></li>
-            <li><img src="asset/img/LightMode.png" id="lightModeIcon" alt="light mode icon"></li>
-        </ul>
-    </header>
-
-    <!-- HOME SECTION -->
-    <section class="home" id="home">
-        <h4 class="p1">Hi, my name is</h4>
-        <!-- <h1 class="shadowEffect">Kino Justin Rosales.</h1> -->
-        <div class="glitch-wrapper">
-            <div class="glitch" data-glitch="Kino Justin Rosales.">Kino Justin Rosales.</div>
-         </div>
-        <p class="introduction1">I'm a computer engineering student from Center for Industrial Technology and Entrerprise (CITE) Technical Institute,
-            Inc. Currently, I'm learning HTML, CSS, and JavaScript for our web
-            development class. 
-        </p> <br>
-        <p class="introduction2">My goal is not only to grow academically, but also to actively seek opportunities to apply my skills in 
-            real-world projects. In order to be competitive and innovative, I believe in continuous learning and staying up to date on the 
-            latest innovations in my field of expertise.
-        </p > <br>
-        <p class="see_more"><a href="#about" onclick="updateHash('about')">See More About Me <span class="sliding-arrow">-></span></a></p>
-        <div class="social_icons">
-            <a href="https://www.facebook.com/kinojustin.selasor" target="_blank"><ion-icon name="logo-facebook"></ion-icon></a>
-            <a href="https://github.com/KinRosales" target="_blank"><ion-icon name="logo-github"></ion-icon></a>
-            <a href="https://www.instagram.com/ro_kinju/" target="_blank"><ion-icon name="logo-instagram"></ion-icon></a>
-            <a href="https://www.linkedin.com/in/kino-rosales-91b7a32b6/" target="_blank"><ion-icon name="logo-linkedin"></ion-icon></a>
-        </div>
-        <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-        <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
-    </section>
-
-    <!-- ABOUT SECTION -->
-    <section class="about-me" id="about">
-        <h2 id="aboutMe">About Me.</h2>
-        <div class="container">
-            <div class="vertical-line"></div>
-            <div class="circle"></div>
-            <p class="aboutBody">
-                Hello! My name is Kino. I am a dedicated student with a passion for Computer Engineering. While the career
-                I want to pursue is still in its early stages, my eagerness for education and desire to achieve in the
-                ever-changing world of technology motivate me to pursue my goals. 
-            </p> 
-            <p class="aboutBody">
-                Despite not having professional work experience, I am eager to bridge the gap between theory and practice.
-                I've spent time improving my skills, seeking out online tutorials, taking online courses, and working with 
-                peers to broaden my knowledge base.
-            </p>
-            <p class="aboutBody">
-                When I'm not coding or tinkering with hardware, I do workouts, play video games, spend time with friends and 
-                family, read books, and watch movies. I believe that maintaining a balance between work and leisure stimulates 
-                my creativity and keeps me motivated to pursue my passions.
-            </p>
-            <p class="aboutBody">
-                Looking ahead, I am excited to broaden my field of expertise and obtain hands-on experience through
-                internships or collaborative projects. My particular interest is in web development, where I hope to learn
-                more about the complexities of creating efficient and unique digital experiences.
-                In addition, I am really interested in cybersecurity, which I believe is crucial in today's digital landscape.
-                While my primary focus is currently on web development, I am excited to dive into the interesting world of cybersecurity 
-                in the future.
-            </p>
-            <p class="aboutBody">
-                I am committed to constant learning and progress in an industry that values innovation, not just current
-                trends. As I progress through my academic career, I am actively seeking opportunities to contribute to the
-                field and make a beneficial impact.
-            </p>
-            <p class="aboutBody">
-                I am looking forward to the journey ahead, eager to be of service, and ready to immerse myself in the
-                ever-changing world of Computer Engineering. Let's connect and discover the fascinating possibilities!
-            </p>
-        </div>
-        <p class="continueToProjects"><a href="#projects" onclick="updateHash('projects')">Continue To Projects <span class="sliding-arrow">-></span></a></p>
-        <div class="social_icons">
-            <a href="https://www.facebook.com/kinojustin.selasor" target="_blank"><ion-icon name="logo-facebook"></ion-icon></a>
-            <a href="https://github.com/KinRosales" target="_blank"><ion-icon name="logo-github"></ion-icon></a>
-            <a href="https://www.instagram.com/ro_kinju/" target="_blank"><ion-icon name="logo-instagram"></ion-icon></a>
-            <a href="https://www.linkedin.com/in/kino-rosales-91b7a32b6/" target="_blank"><ion-icon name="logo-linkedin"></ion-icon></a>
-        </div>
-    </section>
     
-    <!-- PROJECT SECTION -->
-    <section class="projects" id="projects">
-        <h2 class="project-text">Projects.</h2>
-        <div class="card-list">
-            <a href="#homeworkTracker" onclick="toggle(event)" class="card-item" id="homeworkTracker">
-                <img src="asset/img/HomeworkTracker.png" alt="Card Image">
-                <span class="java">Java</span>
-                <h3>Student Homework Tracker</h3>
-                <div class="arrow">
-                    <i class="fas fa-arrow-right card-icon"></i>
-                </div>
-            </a>
-            <a href="#passwordGenerator" onclick="toggle(event)" class="card-item" id="passwordGenerator">
-                <img src="asset/img/PasswordGenerator.png" alt="Card Image">
-                <span class="java">Java</span>
-                <h3>Password Generator</h3>
-                <div class="arrow">
-                    <i class="fas fa-arrow-right card-icon"></i>
-                </div>
-            </a>
-            <a href="#loginSystem" onclick="toggle(event)" class="card-item" id="loginSystem">
-                <img src="asset/img/Login_System(Java).png" alt="Card Image">
-                <span class="java">Java</span>
-                <h3>Login System</h3>
-                <div class="arrow">
-                    <i class="fas fa-arrow-right card-icon"></i>
-                </div>
-            </a>
-            <a href="https://docs.google.com/presentation/d/1xZ-k1o9EcBP2WNj1iSOvMyx_Ea16MLXK/edit?usp=drive_link&ouid=116736861470672522126&rtpof=true&sd=true" target="_blank" class="card-item">
-                <img src="asset/img/BookAppoint.png" alt="Card Image">
-                <span class="java">Java</span>
-                <h3>Book Appointment</h3>
-                <div class="arrow">
-                    <i class="fas fa-arrow-right card-icon"></i>
-                </div>
-            </a>
-            <a href="#simpleCalculator" onclick="toggle(event)" class="card-item" id="simpleCalculator">
-                <img src="asset/img/Simple_Calculator.png" alt="Card Image">
-                <span class="html">HTML</span>
-                <span class="cascading">CSS</span>
-                <span class="javaScript">JavaScript</span>
-                <h3>Simple Calculator</h3>
-                <div class="arrow">
-                    <i class="fas fa-arrow-right card-icon"></i>
-                </div>
-            </a>
-        </div>
-        <p class="continueToContact"><a href="#contact" onclick="updateHash('contact')">Continue To Contacts <span class="sliding-arrow">-></span></a></p>
-        <div class="social_icons">
-            <a href="https://www.facebook.com/kinojustin.selasor" target="_blank"><ion-icon name="logo-facebook"></ion-icon></a>
-            <a href="https://github.com/KinRosales" target="_blank"><ion-icon name="logo-github"></ion-icon></a>
-            <a href="https://www.instagram.com/ro_kinju/" target="_blank"><ion-icon name="logo-instagram"></ion-icon></a>
-            <a href="https://www.linkedin.com/in/kino-rosales-91b7a32b6/" target="_blank"><ion-icon name="logo-linkedin"></ion-icon></a>
-        </div>
-    </section>
-    <div id="popup">
-        <span onclick="toggle()">&times;</span>
-        <video src="#" controls></video>
-    </div>
+        <input type="checkbox" id="check">
+        <label for="check" class="icons">
+            <i class='bx bx-menu' id="menu-icon"></i>
+            <i class='bx bx-x' id="close-icon"></i>
+        </label>
+    
+        <nav id="side-navbar">
+            <ul>
+                <li><a href="./view/about/about.html">About</a></li>
+                <li><a href="#">Projects</a></li>
+                <li><a href="#">Contact</a></li>
+                <li><img src="asset/img/LightMode.png" id="lightModeIcon" alt="light mode icon"></li>
+            </ul>
+        </nav>
+</header>
 
-    <!-- CONTACT SECTION -->
-    <section class="contact" id="contact">
-        <h2 class="contact-text">Contact.</h2>
-        <p class="contactBody">Feel free to reach out to me. You can also contact me directly to my email
-            <span id="emailID">skinojustin@gmail.com</span>
-        </p>
-        
-        <form name="submit-to-google-sheet">
-            <div class="field">
-                <input type="text" name="Name" id="name" autocomplete="off" required>
-               <label>Name</label>
-            </div>
-            <div class="field">
-                <input type="email" name="Email" id="email" autocomplete="off" required>
-               <label>Email</label>
-            </div>
-            <div class="field">
-               <textarea id="message" name="Message" required></textarea>
-               <label>Message</label>
-            </div>
-            <div class="submitBtn">
-                <button type="submit" class="submitMessage">Send Message</button>
-            </div>
-        </form>
-        <span id="msg"></span>
-        <div class="social_icons">
-            <a href="https://www.facebook.com/kinojustin.selasor" target="_blank"><ion-icon name="logo-facebook"></ion-icon></a>
-            <a href="https://github.com/KinRosales" target="_blank"><ion-icon name="logo-github"></ion-icon></a>
-            <a href="https://www.instagram.com/ro_kinju/" target="_blank"><ion-icon name="logo-instagram"></ion-icon></a>
-            <a href="https://www.linkedin.com/in/kino-rosales-91b7a32b6/" target="_blank"><ion-icon name="logo-linkedin"></ion-icon></a>
+<!-- --------------- MAIN --------------- -->
+<main>
+    <h1>Hi, my name is</h1>
+    <div class="glitch-wrapper">
+        <div class="glitch" data-glitch="Kino Justin Rosales.">Kino Justin Rosales.</div>
         </div>
-    </section>
-    <script src="asset/js/index.js"></script>
+    <p class="paragraph">
+        I am a diligent and passionate student currently pursuing a Diploma in Computer Engineering Technology at Center for Industrial Technology and Enterprise (CITE) Technical Institute Inc. With a basic knowledge of web development, hardware and software troubleshooting, data recovery, and network design, I enjoy developing new and efficient solutions that make an impact.
+    </p>
+    <p class="paragraph">
+        My goal is not only to grow academically, but also to actively seek opportunities to apply my skills in 
+        real-world projects. In order to be competitive and innovative, I believe in continuous learning and staying up to date on the 
+        latest innovations in my field of expertise.
+    </p >
+
+    <a class="arrow" href="./view/about/about.html">See more about me <i class='bx bx-right-arrow-alt'></i></a>
+
+    <div class="social-icons">
+        <a href="https://www.facebook.com/kinojustin.selasor" target="_blank"><i class='bx bxl-facebook-circle' ></i></a>
+        <a href="https://github.com/KinRosales" target="_blank"><i class='bx bxl-github' ></i></a>
+        <a href="https://www.instagram.com/ro_kinju/" target="_blank"><i class='bx bxl-instagram' ></i></a>
+        <a href="https://www.linkedin.com/in/kino-rosales-91b7a32b6/" target="_blank"><i class='bx bxl-linkedin-square' ></i></a>
+    </div>
+</main>
+
 </body>
-</html> 
+</html>
